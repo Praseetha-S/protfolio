@@ -1,0 +1,443 @@
+/* =====================================================
+   SKILLS SECTION — SCROLL LOCK & OUTSIDE CARDS
+   Scroll lock is handled in JS via wheel preventDefault.
+   No body:position:fixed needed.
+   ===================================================== */
+
+.tks-section {
+  position: relative;
+  width: 100%;
+  background: var(--bg-alt);
+  /* The container takes viewport height, rest is handled by locking */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.tks-shell {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 96vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ── HEADER ───────────────────────────────────────── */
+.tks-header {
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+.tks-hint {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+/* ── CATEGORY PILLS ───────────────────────────────── */
+.tks-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+}
+
+.tks-pill {
+  font-family: var(--mono);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 100px;
+  border: 1.5px solid rgba(74, 14, 23, 0.14);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.22s ease;
+}
+
+.tks-pill i { font-size: 0.72rem; color: var(--orange); }
+.tks-pill-count {
+  font-style: normal;
+  background: rgba(74,14,23,0.07);
+  border-radius: 100px;
+  padding: 0 0.4rem;
+  font-size: 0.62rem;
+}
+
+.tks-pill:hover { background: rgba(163,42,57,0.08); color: var(--ink); border-color: rgba(163,42,57,0.3); }
+.tks-pill.active { background: var(--ink); color: #FBF6F0; border-color: var(--ink); }
+.tks-pill.active i, .tks-pill.active .tks-pill-count { color: rgba(251,246,240,0.75); background: rgba(255,255,255,0.15); }
+
+/* ── MAIN STAGE ───────────────────────────────────── */
+.tks-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex: 1;
+  width: 100%;
+  position: relative;
+}
+
+/* ── SKILL CARD COLUMNS ───────────────────────────── */
+.tks-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 280px;
+  flex-shrink: 0;
+}
+
+/* Animate in/out */
+.tks-col.cards-in .tks-card.sk-left  { animation: cardInL 0.45s cubic-bezier(0.34,1.56,0.64,1) both; }
+.tks-col.cards-in .tks-card.sk-right { animation: cardInR 0.45s cubic-bezier(0.34,1.56,0.64,1) both; }
+.tks-col.cards-out .tks-card.sk-left { animation: cardOutL 0.18s ease both; }
+.tks-col.cards-out .tks-card.sk-right{ animation: cardOutR 0.18s ease both; }
+
+@keyframes cardInL {
+  from { opacity:0; transform: translateX(80px) scale(0.7); }
+  to   { opacity:1; transform: translateX(0) scale(1); }
+}
+@keyframes cardInR {
+  from { opacity:0; transform: translateX(-80px) scale(0.7); }
+  to   { opacity:1; transform: translateX(0) scale(1); }
+}
+@keyframes cardOutL {
+  from { opacity:1; transform: translateX(0) scale(1); }
+  to   { opacity:0; transform: translateX(80px) scale(0.8); }
+}
+@keyframes cardOutR {
+  from { opacity:1; transform: translateX(0) scale(1); }
+  to   { opacity:0; transform: translateX(-80px) scale(0.8); }
+}
+
+/* INDIVIDUAL SKILL CARD */
+.tks-card {
+  background: #fff;
+  border: 1.5px solid rgba(163,42,57,0.1);
+  border-radius: 20px;
+  padding: 1.6rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(74,14,23,0.06);
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: default;
+}
+
+.tks-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--card-color, #4a0e17) 8%, transparent), transparent 70%);
+  pointer-events: none;
+}
+
+.tks-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(74,14,23,0.12);
+  border-color: var(--card-color, rgba(163,42,57,0.3));
+}
+
+/* Big logo wrap */
+.tks-card-logo-wrap {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.tks-card:hover .tks-card-logo-wrap {
+  transform: scale(1.15);
+}
+
+.tks-card-logo-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.12));
+}
+
+.tks-card-name {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Bottom color strip */
+.tks-card-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 0 0 20px 20px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.tks-card:hover .tks-card-bar { opacity: 1; }
+
+
+/* ── LAPTOP CENTER ────────────────────────────────── */
+.tks-laptop-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+  width: 420px;
+  z-index: 10;
+}
+
+.tks-laptop-glow {
+  position: absolute;
+  inset: 10% 5%;
+  background: radial-gradient(circle, rgba(163,42,57,0.3) 0%, transparent 70%);
+  filter: blur(45px);
+  pointer-events: none;
+}
+
+/* Screen */
+.tks-laptop-screen {
+  width: 100%;
+  background: #151217;
+  border: 10px solid #2A2628;
+  border-bottom: none;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.07);
+}
+
+/* Top bar */
+.tks-tl-bar {
+  height: 30px;
+  background: #1E1B1D;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  gap: 0.35rem;
+}
+
+.tl { width: 9px; height: 9px; border-radius: 50%; }
+.tl.r { background: #FF5F56; }
+.tl.y { background: #FFBD2E; }
+.tl.g { background: #27C93F; }
+
+.tks-tl-title {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: #C9BAC0;
+  margin-left: 0.4rem;
+}
+.tks-tl-chap {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 0.07em;
+}
+
+/* Screen body */
+.tks-screen-body {
+  position: relative;
+  height: 260px;
+}
+
+.tks-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(255,255,255,0.015) 3px,
+    rgba(255,255,255,0.015) 4px
+  ),
+  radial-gradient(ellipse at 50% 40%, rgba(74,14,23,0.65) 0%, #0E0C10 80%);
+}
+
+.tks-screen-info {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 0.5rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.tks-screen-info.si-in  { opacity: 1; transform: scale(1); }
+.tks-screen-info.si-out { opacity: 0; transform: scale(0.9); }
+
+/* Big logo in center of screen */
+.tks-screen-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+.tks-screen-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.2));
+  animation: screenLogoFloat 3s ease-in-out infinite alternate;
+}
+@keyframes screenLogoFloat {
+  from { transform: translateY(0px); filter: drop-shadow(0 0 16px rgba(255,255,255,0.15)); }
+  to   { transform: translateY(-6px); filter: drop-shadow(0 0 28px rgba(255,255,255,0.35)); }
+}
+
+.tks-screen-cat {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #FFD700;
+  background: rgba(255,215,0,0.12);
+  border: 1px solid rgba(255,215,0,0.3);
+  padding: 0.2rem 0.75rem;
+  border-radius: 100px;
+  letter-spacing: 0.08em;
+}
+
+.tks-screen-skills {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.06em;
+}
+
+.tks-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #27C93F;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #27C93F;
+  animation: pulse 2s infinite;
+  margin-top: 0.25rem;
+}
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(39, 201, 63, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(39, 201, 63, 0); }
+}
+
+/* Base */
+.tks-laptop-base {
+  width: 110%;
+  height: 14px;
+  background: linear-gradient(180deg, #3A3437, #1D191B);
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.tks-laptop-notch {
+  width: 80px;
+  height: 7px;
+  background: #111;
+  border-radius: 0 0 8px 8px;
+}
+
+/* ── FOOTER ───────────────────────────────────────── */
+.tks-footer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 560px;
+  padding-bottom: 0.5rem;
+}
+
+.tks-btn {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: #fff;
+  border: 1.5px solid var(--line-md);
+  padding: 0.45rem 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+}
+.tks-btn:hover:not(:disabled) { background: var(--ink); color: #FBF6F0; transform: translateY(-2px); }
+.tks-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.tks-prog-track {
+  flex: 1;
+  height: 5px;
+  background: rgba(74,14,23,0.1);
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+}
+.tks-prog-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--burgundy), var(--orange), #FFD700);
+  border-radius: 100px;
+  transition: width 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.tks-prog-label {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  min-width: 45px;
+  text-align: right;
+}
+
+/* ── MOBILE ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .tks-section { height: auto; min-height: 100vh; padding: 2rem 0; }
+  .tks-shell { height: auto; }
+
+  .tks-stage {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .tks-laptop-wrap { width: 100%; max-width: 360px; }
+
+  .tks-col {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tks-card { width: 140px; }
+  .tks-card-icon { width: 56px; height: 56px; font-size: 2.2rem; }
+
+  .tks-col.cards-in .tks-card.sk-left { animation: cardInL  0.4s cubic-bezier(0.34,1.56,0.64,1) both; }
+  .tks-col.cards-in .tks-card.sk-right{ animation: cardInR 0.4s cubic-bezier(0.34,1.56,0.64,1) both; }
+}

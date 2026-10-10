@@ -1,0 +1,323 @@
+/* ═══════════════════════════════════════
+   DESIGN PLAYGROUND STYLES
+   ═══════════════════════════════════════ */
+
+.dp-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  border-top: 1px solid var(--line);
+}
+
+.dp-header {
+  margin-bottom: 3rem;
+}
+
+.dp-subtitle {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.dp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* ── CONTROLS PANEL ── */
+.dp-controls {
+  background: #fff;
+  border: 1px solid rgba(74, 14, 23, 0.08);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(74, 14, 23, 0.04);
+}
+
+.dp-controls-title {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  margin: 0 0 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(74, 14, 23, 0.08);
+}
+
+.dp-control-group {
+  margin-bottom: 1.75rem;
+}
+
+.dp-control-group:last-child {
+  margin-bottom: 0;
+}
+
+.dp-control-group label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.dp-theme-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dp-theme-btn {
+  background: rgba(74, 14, 23, 0.04);
+  border: 1px solid transparent;
+  color: var(--ink);
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.dp-theme-btn:hover {
+  background: rgba(74, 14, 23, 0.08);
+}
+
+.dp-theme-btn.active {
+  background: #fff;
+  border-color: var(--burgundy);
+  color: var(--burgundy);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(74, 14, 23, 0.05);
+}
+
+.dp-color-picker {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.dp-color-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.dp-color-btn:hover {
+  transform: scale(1.1);
+}
+
+.dp-color-btn.active {
+  border-color: var(--ink);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.8), 0 0 0 4px var(--ink);
+}
+
+.dp-slider {
+  width: 100%;
+  accent-color: var(--burgundy);
+  cursor: ew-resize;
+}
+
+/* ── PREVIEW PANEL ── */
+.dp-preview-area {
+  background: var(--ink);
+  border-radius: 20px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Background patterns inside the preview */
+.dp-preview-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Base card inside preview */
+.dp-card {
+  width: 280px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.dp-card-img {
+  height: 140px;
+  width: 100%;
+  background: var(--dp-accent);
+  transition: background 0.3s ease;
+}
+
+.dp-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dp-badge {
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.5rem;
+}
+
+.dp-card-title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.dp-card-text {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.dp-card-btn {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* ── THEMES ── */
+
+/* Flat & Clean Theme */
+.dp-flat .dp-card {
+  background: #FBF6F0;
+  border-radius: var(--dp-radius);
+  border: 1.5px solid rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.dp-flat .dp-card-body {
+  color: #1A1216;
+}
+.dp-flat .dp-badge {
+  background: rgba(0,0,0,0.06);
+  color: var(--dp-accent);
+  border-radius: calc(var(--dp-radius) / 2);
+}
+.dp-flat .dp-card-btn {
+  background: var(--dp-accent);
+  color: #fff;
+  border-radius: calc(var(--dp-radius) / 2);
+}
+
+/* Glassmorphism Theme */
+.dp-glass {
+  background: linear-gradient(135deg, #1A1216 0%, #301720 100%);
+}
+.dp-glass::before {
+  content: '';
+  position: absolute;
+  top: 10%; left: 10%;
+  width: 150px; height: 150px;
+  background: var(--dp-accent);
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.6;
+}
+.dp-glass::after {
+  content: '';
+  position: absolute;
+  bottom: 10%; right: 10%;
+  width: 120px; height: 120px;
+  background: #FFD700;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.3;
+}
+.dp-glass .dp-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--dp-radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+.dp-glass .dp-card-body {
+  color: rgba(255,255,255,0.9);
+}
+.dp-glass .dp-badge {
+  background: rgba(255,255,255,0.1);
+  color: #FFD700;
+  border-radius: calc(var(--dp-radius) / 2);
+}
+.dp-glass .dp-card-btn {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: calc(var(--dp-radius) / 2);
+}
+.dp-glass .dp-card-btn:hover {
+  background: var(--dp-accent);
+  border-color: var(--dp-accent);
+}
+
+/* Neobrutalism Theme */
+.dp-brutal {
+  background: #f4f4f0;
+  background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.dp-brutal .dp-card {
+  background: #fff;
+  border-radius: 0;
+  border: 3px solid #000;
+  box-shadow: 8px 8px 0 var(--dp-accent-hex);
+}
+.dp-brutal .dp-card-body {
+  color: #000;
+}
+.dp-brutal .dp-badge {
+  background: #000;
+  color: #fff;
+  border-radius: 0;
+}
+.dp-brutal .dp-card-btn {
+  background: #FFD700;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 0;
+  box-shadow: 3px 3px 0 #000;
+  transform: translateY(0);
+}
+.dp-brutal .dp-card-btn:active {
+  box-shadow: 0 0 0 #000;
+  transform: translate(3px, 3px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .dp-grid {
+    grid-template-columns: 1fr;
+  }
+}
