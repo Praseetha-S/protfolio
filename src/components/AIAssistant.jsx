@@ -180,7 +180,7 @@ export default function AIAssistant() {
         <div className="ai-panel" role="dialog" aria-modal="true" aria-label="AI Portfolio Assistant">
           <div className="ai-panel-header">
             <div className="ai-panel-avatar">
-              <img src="src="/assets/profile.jpeg"" alt="Praseetha" />
+              <img src="/assets/profile.jpeg" alt="Praseetha" />
               <span className="ai-online-dot" />
             </div>
             <div className="ai-panel-info">

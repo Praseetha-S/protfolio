@@ -962,7 +962,7 @@ export default function App() {
                 {/* PORTRAIT IMAGE BOX WITH TALKING MOUTH */}
                 <div className={`portrait-img-box ${isSpeakingActive ? 'video-playing' : ''}`}>
                   <img
-                    src="src="/assets/profile.jpeg""
+                    src="/assets/profile.jpeg"
                     alt="Praseetha S"
                     className={`portrait-img ${isSpeakingActive ? 'video-active-img talking-pulse' : ''}`}
                   />
