@@ -9,7 +9,7 @@ const KB = {
   email: 'praseethasathish28@gmail.com',
   linkedin: 'https://www.linkedin.com/in/praseetha-s-a37943331/',
   github: 'https://github.com/Praseetha-S',
-  resume: 'PRASEETHA_S_RESUME.pdf',
+  resume: '/PRASEETHA_S_RESUME.pdf',
   education: 'B.Tech in Artificial Intelligence & Data Science at Velalar College of Engineering and Technology, Erode (2024–2028, CGPA 7.84).',
   experience: 'Front-End Development Intern at NXTLOGIC SOFTWARE SOLUTIONS, Coimbatore (June 17 – July 7, 2026). 15-day internship focused on front-end development and responsive interfaces.',
   featuredProjects: [

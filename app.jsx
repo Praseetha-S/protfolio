@@ -905,7 +905,7 @@ export default function App() {
             <a href="#connect" className={activeSection === 'connect' ? 'active' : ''} onClick={() => setMobileOpen(false)}><span className="nav-num">07.</span> CONTACT</a>
           </nav>
           <div className="header-actions">
-            <a href="PRASEETHA_S_RESUME.pdf" target="_blank" rel="noopener noreferrer" className="btn-resume-header">
+            <a href="/PRASEETHA_S_RESUME.pdf" target="_blank" rel="noopener noreferrer" className="btn-resume-header">
               RESUME <i className="fa-solid fa-arrow-down-to-line" />
             </a>
             <a href="#connect" className="btn-talk">
@@ -939,7 +939,7 @@ export default function App() {
               </p>
               <div className="hero-btns">
                 <a href="#projects" className="btn-primary" onMouseEnter={() => setCursorHover(true)} onMouseLeave={() => setCursorHover(false)}>EXPLORE WORK ↓</a>
-                <a href="PRASEETHA_S_RESUME.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline" onMouseEnter={() => setCursorHover(true)} onMouseLeave={() => setCursorHover(false)}>VIEW RESUME →</a>
+                <a href="/PRASEETHA_S_RESUME.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline" onMouseEnter={() => setCursorHover(true)} onMouseLeave={() => setCursorHover(false)}>VIEW RESUME →</a>
               </div>
               <div className="hero-tags">
                 <span>FRONT-END</span>

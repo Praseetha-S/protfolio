@@ -4,7 +4,7 @@ export const heroData = {
   name: 'PRASEETHA S',
   tagline: 'B.Tech AI & Data Science Student · Front-End Developer · UI/UX Enthusiast',
   bio: 'A passionate developer and UI/UX designer creating modern digital experiences, intelligent systems, and clean web applications.',
-  resumeLink: 'PRASEETHA_S_RESUME.pdf',
+  resumeLink: '/PRASEETHA_S_RESUME.pdf',
   email: 'praseethasathish28@gmail.com',
   github: 'https://github.com/Praseetha-S',
   linkedin: 'https://www.linkedin.com/in/praseetha-s-a37943331/'
