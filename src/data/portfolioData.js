@@ -17,7 +17,7 @@ export const featuredProjectsData = [
     category: 'Client Project • Corporate Website • UI/UX',
     description: 'A responsive corporate website designed for Sathya Group, bringing multiple business verticals into one structured digital experience. The project focuses on professional branding, clear navigation, responsive layouts and a consistent user experience.',
     tech: ['HTML', 'CSS', 'JavaScript', 'Figma'],
-    thumbnail: 'assets/maroon_thumb.jpg',
+    thumbnail: '/assets/maroon_thumb.jpg',
     live: 'https://ornate-daffodil-e96abf.netlify.app/'
   },
   {
@@ -26,7 +26,7 @@ export const featuredProjectsData = [
     category: 'Client Project • Business Website',
     description: 'A premium responsive business website developed for a henna artist, combining visual storytelling with service presentation, gallery, customer reviews, appointment booking and contact functionality. The project focuses on creating an elegant digital presence for a real business.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    thumbnail: 'assets/henna_laksh_thumb.jpg',
+    thumbnail: '/assets/henna_laksh_thumb.jpg',
     live: 'https://henna-by-laksh.netlify.app/',
     github: 'https://github.com/Praseetha-S/henna__by_laksh'
   },
@@ -36,7 +36,7 @@ export const featuredProjectsData = [
     category: 'Client Project • Business Website',
     description: 'A responsive business website developed for SD Aari Works, presenting its services and work through a clean, visually focused interface with structured information and an easy-to-use experience.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    thumbnail: 'assets/aari.jpg',
+    thumbnail: '/assets/aari.jpg',
     live: 'https://sd-aari.netlify.app/'
   },
   {
@@ -45,7 +45,7 @@ export const featuredProjectsData = [
     category: 'Web Development • UI Design',
     description: 'A responsive bakery website designed to showcase products, categories, offers and brand information through an attractive and user-friendly interface.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    thumbnail: 'assets/bakery.jpg',
+    thumbnail: '/assets/bakery.jpg',
     live: 'https://baketheorypraseetha.netlify.app/',
     github: 'https://github.com/Praseetha-S/bakery-website',
     githubPages: 'https://praseethasathish28-ux.github.io/bakery-website/'
@@ -56,7 +56,7 @@ export const featuredProjectsData = [
     category: 'Web Development • Fashion Website',
     description: 'An elegant and responsive boutique website designed to showcase fashion collections through a clean visual interface, organized categories and an engaging browsing experience.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    thumbnail: 'assets/boutique.jpg',
+    thumbnail: '/assets/boutique.jpg',
     live: 'https://boutique-timeless-elegant.netlify.app/',
     github: 'https://github.com/Praseetha-S/boutique-website'
   },
@@ -66,7 +66,7 @@ export const featuredProjectsData = [
     category: 'Web Development • Healthcare Website',
     description: 'A professional healthcare website designed to present hospital information and services through a clean, accessible and trustworthy digital interface.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    thumbnail: 'assets/hospital.jpg',
+    thumbnail: '/assets/hospital.jpg',
     live: 'https://sri-krishnahospital.netlify.app/'
   },
   {
@@ -75,7 +75,7 @@ export const featuredProjectsData = [
     category: 'Web Development • Fitness Website',
     description: 'A modern fitness website designed with a bold visual style to present gym services, training information and fitness-focused content through a responsive interface.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    thumbnail: 'assets/gym134_thumb.jpg',
+    thumbnail: '/assets/gym134_thumb.jpg',
     live: 'https://gym134.netlify.app/'
   }
 ];
@@ -88,7 +88,7 @@ export const aiProjectsData = [
     desc: 'An AIoT-based lift management concept exploring smarter decision-making and efficient elevator operation.',
     cat: 'AIoT / PROTOTYPE',
     status: 'IN PROGRESS',
-    thumbnail: 'assets/smartlift_thumb.jpg',
+    thumbnail: '/assets/smartlift_thumb.jpg',
     github: 'https://github.com/prasethdev/SmartLift'
   },
   {
@@ -98,7 +98,7 @@ export const aiProjectsData = [
     desc: 'An affordable smart retrofit concept for modernising legacy lathe machines used in MSMEs.',
     cat: 'MSME / AUTOMATION',
     status: 'COMPLETED',
-    thumbnail: 'assets/retrofit_thumb.jpg',
+    thumbnail: '/assets/retrofit_thumb.jpg',
     github: 'https://github.com/prasethdev/RetroFit-AI-Edge-5.0'
   },
   {
@@ -106,7 +106,7 @@ export const aiProjectsData = [
     name: 'AI MISSING PERSON ID SYSTEM',
     desc: 'AI-based identification concept using facial information to assist missing-person identification.',
     cat: 'AI / COMPUTER VISION',
-    thumbnail: 'assets/missing_person_thumb.jpg',
+    thumbnail: '/assets/missing_person_thumb.jpg',
     github: 'https://github.com/Praseetha-S/AI-Based-Missing-Person---Unidentified-Body-Identification--System-'
   }
 ];
@@ -117,7 +117,7 @@ export const uiuxProjectsData = [
     category: 'UI/UX Design',
     about: 'A creative poster showcase interface designed to present a collection of poster designs in an engaging and visually appealing way. The project focuses on visual storytelling, clean presentation, and an interactive browsing experience.',
     tech: ['Figma', 'UI/UX Design', 'Visual Design'],
-    thumbnail: 'assets/poster_showcase_thumb.png',
+    thumbnail: '/assets/poster_showcase_thumb.png',
     figma: 'https://www.figma.com/proto/m1bBYwKPYc626pPFyGCy7d/POSTER-SHOWCASE?node-id=1-2&p=f&viewport=195%2C29%2C0.33&t=pS4hENxt8EaNk6Gj-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2&page-id=0%3A1',
     btnText: '🎨 View Project ↗'
   },
@@ -126,7 +126,7 @@ export const uiuxProjectsData = [
     category: 'UI/UX Design',
     about: 'A food delivery app UI/UX design exploration focused on creating a clean, visually balanced, and user-friendly digital interface. The design demonstrates attention to layout, visual hierarchy, food menu browsing, and overall user experience.',
     tech: ['Figma', 'UI/UX Design'],
-    thumbnail: 'assets/foodzy_app_thumb.png',
+    thumbnail: '/assets/foodzy_app_thumb.png',
     figma: 'https://www.figma.com/proto/EiprjxyejN5pUv7SVJ3r2s/Untitled?node-id=35-31&p=f&viewport=-15073%2C-4466%2C0.79&t=XMShaMyPB5CMxjC5-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=35%3A31&page-id=0%3A1',
     btnText: '🎨 View Design ↗'
   },
@@ -135,7 +135,7 @@ export const uiuxProjectsData = [
     category: 'UI/UX Design',
     about: 'An interactive movie ticket booking prototype created in Figma to explore interface structure, seat selection user flow, and visual interaction. The project focuses on combining a modern visual approach with a simple and intuitive booking experience.',
     tech: ['Figma', 'UI/UX Prototype'],
-    thumbnail: 'assets/movie_booking_thumb.png',
+    thumbnail: '/assets/movie_booking_thumb.png',
     figma: 'https://www.figma.com/proto/s90zUKIWhm5NMXR7aLjtjp/Untitled?node-id=17-5&p=f&viewport=-140%2C240%2C0.32&t=lX3z3UgEV2iRFnUN-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=17%3A5&page-id=0%3A1',
     btnText: '🎨 View Prototype ↗'
   }
@@ -218,7 +218,7 @@ export const certificationsData = [
     meta: '12-Week Course · Jul-Oct 2024 · Score: 90% (Top 1%)',
     desc: 'Elite + Gold Medal certificate awarded by NPTEL for achieving 90% aggregate in the 12-week course. Demonstrated excellence in interpersonal communication, personality development, and professional ethics.',
     img: 'certificates/nptel_softskills_cert.jpg',
-    pdf: 'assets/nptel.pdf'
+    pdf: '/assets/nptel.pdf'
   },
   {
     id: 'nptel-cloud-computing',
