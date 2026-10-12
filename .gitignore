@@ -3,4 +3,8 @@ dist/
 .env
 .env.*
 !.env.example
+<<<<<<< HEAD
 PRASEETHA_S_RESUME.pdf
+=======
+PRASEETHA_S_RESUME.pdf
+>>>>>>> 903bb9955b20daf3dde2b7ae65a7c67a01051a01
